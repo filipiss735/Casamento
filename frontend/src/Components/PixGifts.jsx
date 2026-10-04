@@ -10,7 +10,6 @@ export default function PixGifts({ products, online, settings, onChanged }) {
       <h2 className="font-serif text-4xl text-center mt-2">Presentes em Pix</h2>
       <p className="text-center text-stone-600 max-w-xl mx-auto mt-4">São 10 cotas de cada valor. Você pode reservar mais de uma, inclusive de valores diferentes. Cada reserva reduz uma cota disponível.</p>
       <p className="text-center text-sm text-stone-500 mt-2">Reservar não realiza nem confirma o pagamento. Após a reserva, transfira pelo aplicativo do seu banco.</p>
-      {!online && <p role="status" className="text-center text-amber-900 mt-4">Disponibilidade temporariamente indisponível. <button onClick={onChanged} className="underline">Tentar conectar</button></p>}
       <div className="grid sm:grid-cols-3 gap-6 mt-10">
         {[50, 100, 200].map(amount => {
           const quotas = products.filter(p => p.id.startsWith(`pix-${amount}-`));
