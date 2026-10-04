@@ -30,7 +30,6 @@ export default function ProductCarousel({ products, online, settings, onChanged,
         <p className="text-xs uppercase tracking-[0.3em] font-semibold text-[#9E7B36] mb-3">Lista de presentes</p>
         <h2 className="font-serif text-3xl sm:text-4xl text-stone-900">{title}</h2>
         <p className="text-stone-600 mt-3 max-w-xl text-sm">{subtitle}</p>
-        {!online && <p role="status" className="mt-3 text-sm text-amber-900">Não foi possível consultar as reservas. Você pode abrir o formulário, mas a confirmação depende da conexão com o servidor. <button onClick={onChanged} className="underline font-semibold">Tentar novamente</button></p>}
         {id === "presentes-pix" && online && (!settings?.pix_key?.trim() || !settings?.pix_name?.trim()) && <p role="status" className="mt-3 text-sm text-amber-900">O casal ainda está configurando os dados do Pix.</p>}
         <div className="flex justify-end gap-3 my-6">
           <button aria-label={`Anterior — ${title}`} onClick={() => emblaApi?.scrollPrev()} className="p-3 rounded-full border border-[#C5A059] text-[#9E7B36]"><ChevronLeft /></button>
