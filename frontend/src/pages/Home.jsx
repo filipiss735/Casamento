@@ -6,6 +6,7 @@ import Navbar from "@/Components/NavBar";
 import Hero from "@/Components/hero";
 import { premiumGifts } from "@/data/premiumGifts";
 import { pixGifts } from "@/data/pixGifts";
+import pixSettings from "@/data/pixSettings.json";
 import PixGifts from "@/Components/PixGifts";
 import CoupleStory from "@/Components/CoupleStory";
 import ProductCarousel from "@/Components/ProductCarousel";
@@ -19,15 +20,23 @@ export default function Home() {
   const [online, setOnline] = useState(false);
 
   const load = useCallback(async () => {
-    try {
-      const [p, s] = await Promise.all([api.get("/products"), api.get("/settings")]);
-      if (!Array.isArray(p.data) || !s.data || typeof s.data !== "object") throw new Error("API inválida");
-      setProducts(p.data);
-      setSettings(s.data);
-      setOnline(true);
-    } catch (e) {
+    const [productsResult, settingsResult] = await Promise.allSettled([
+      api.get("/products"),
+      api.get("/settings"),
+    ]);
+
+    if (productsResult.status !== "fulfilled" || !Array.isArray(productsResult.value.data)) {
       setOnline(false);
+      return;
     }
+
+    setProducts(productsResult.value.data);
+    setSettings(
+      settingsResult.status === "fulfilled" && settingsResult.value.data && typeof settingsResult.value.data === "object"
+        ? settingsResult.value.data
+        : pixSettings
+    );
+    setOnline(true);
   }, []);
 
   useEffect(() => {
