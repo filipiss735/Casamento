@@ -1,1 +1,9 @@
--r backend/requirements-runtime.txt
+fastapi==0.110.1
+uvicorn==0.25.0
+python-dotenv==1.0.1
+pymongo==4.6.3
+motor==3.3.1
+pydantic==2.11.9
+PyJWT==2.10.1
+bcrypt==4.1.3
+httpx==0.27.2
