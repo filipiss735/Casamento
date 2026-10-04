@@ -5,6 +5,8 @@ import { featuredGifts } from "@/data/featuredGifts";
 import Navbar from "@/Components/NavBar";
 import Hero from "@/Components/hero";
 import { premiumGifts } from "@/data/premiumGifts";
+import { pixGifts } from "@/data/pixGifts";
+import PixGifts from "@/Components/PixGifts";
 import CoupleStory from "@/Components/CoupleStory";
 import ProductCarousel from "@/Components/ProductCarousel";
 import EventDetails from "@/Components/EventDetails";
@@ -19,6 +21,7 @@ export default function Home() {
   const load = useCallback(async () => {
     try {
       const [p, s] = await Promise.all([api.get("/products"), api.get("/settings")]);
+      if (!Array.isArray(p.data) || !s.data || typeof s.data !== "object") throw new Error("API inválida");
       setProducts(p.data);
       setSettings(s.data);
       setOnline(true);
@@ -53,8 +56,9 @@ export default function Home() {
       <Navbar />
       <Hero />
       <CoupleStory />
-      <ProductCarousel products={online ? products.filter(p => p.tier !== "premium") : featuredGifts} online={online} onChanged={load} />
+      <ProductCarousel products={online ? products.filter(p => p.tier !== "premium" && p.tier !== "pix") : featuredGifts} online={online} onChanged={load} />
       <ProductCarousel id="presentes-especiais" title="Presentes especiais" subtitle="Escolha e reserve seu presente. Combine os detalhes e a entrega com o casal." products={[...(online ? products.filter(p => p.tier === "premium") : premiumGifts.filter(p => !p.placeholder).map(p => ({ ...p, tier: "premium" }))), ...premiumGifts.filter(p => p.placeholder)]} online={online} onChanged={load} />
+      <PixGifts products={online ? products.filter(p => p.tier === "pix") : pixGifts} online={online} settings={settings} onChanged={load} />
       <EventDetails settings={settings} />
       <RSVPSection />
       <Footer />

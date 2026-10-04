@@ -71,3 +71,30 @@ def test_catalog_restart_preserves_reservations():
         asyncio.run(server.seed_database())
         persisted = next(p for p in client.get('/api/products').json() if p['id'] == catalog_product['id'])
         assert persisted['reserved'] is True
+
+
+def test_pix_capacity_multiple_choices_and_configuration():
+    with TestClient(server.app) as client:
+        auth = {'Authorization': 'Bearer ' + server.create_token(server.ADMIN_EMAIL)}
+        quotas = [p for p in client.get('/api/products').json() if p['tier'] == 'pix']
+        assert len(quotas) == 30
+        for amount in (50, 100, 200):
+            assert len([p for p in quotas if p['id'].startswith(f'pix-{amount}-')]) == 10
+        guest = {'guest_name': 'Teste Cotas Pix', 'phone': '85999990005'}
+        initial_settings = client.get('/api/settings').json()
+        client.put('/api/settings', headers=auth, json={**initial_settings, 'pix_key': ''})
+        first_path = '/api/products/pix-50-01/reserve'
+        assert client.post(first_path, json=guest).status_code == 503
+        client.put('/api/settings', headers=auth, json=initial_settings)
+        with ThreadPoolExecutor(max_workers=2) as pool:
+            attempts = list(pool.map(lambda _: client.post(first_path, json=guest).status_code, range(2)))
+        assert sorted(attempts) == [200, 409]
+        for index in range(2, 11):
+            assert client.post(f'/api/products/pix-50-{index:02}/reserve', json=guest).status_code == 200
+        assert client.post(first_path, json=guest).status_code == 409
+        assert client.post('/api/products/pix-100-01/reserve', json=guest).status_code == 200
+        assert client.post('/api/products/pix-200-01/reserve', json=guest).status_code == 200
+        asyncio.run(server.seed_database())
+        remaining = client.get('/api/products').json()
+        for amount, expected in ((50, 0), (100, 9), (200, 9)):
+            assert len([p for p in remaining if p['id'].startswith(f'pix-{amount}-') and not p['reserved']]) == expected

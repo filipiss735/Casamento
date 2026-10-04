@@ -22,8 +22,17 @@ load_dotenv(ROOT_DIR / '.env.local', override=True)
 
 client = None
 if os.environ.get('DB_DRIVER', 'mongo') == 'sqlite':
-    from sqlite_store import SQLiteStore
+    try:
+        from .sqlite_store import SQLiteStore
+    except ImportError:
+        from sqlite_store import SQLiteStore
     db = SQLiteStore(os.environ.get('SQLITE_PATH', str(ROOT_DIR / 'data' / 'casamento.sqlite3')))
+elif os.environ.get('DB_DRIVER') == 'supabase':
+    try:
+        from .supabase_store import SupabaseStore
+    except ImportError:
+        from supabase_store import SupabaseStore
+    db = SupabaseStore(os.environ['SUPABASE_URL'], os.environ.get('SUPABASE_SECRET_KEY') or os.environ['SUPABASE_SERVICE_ROLE_KEY'])
 else:
     client = AsyncIOMotorClient(os.environ['MONGO_URL'], serverSelectionTimeoutMS=5000)
     db = client[os.environ['DB_NAME']]
@@ -217,6 +226,12 @@ async def seed_database():
             "party_time": "16h30",
             "party_address": "Av. Frei Cirilo, 4340 — Igreja de Jesus Cristo dos Santos dos Últimos Dias",
         })
+    pix_config = ROOT_DIR.parent / 'frontend/src/data/pixSettings.json'
+    if pix_config.exists():
+        defaults = json.loads(pix_config.read_text(encoding='utf-8'))
+        # Populate only an unconfigured Pix; do not overwrite admin updates.
+        await db.settings.update_one({'key': 'party', 'pix_key': ''}, {'$set': {
+            'pix_key': defaults.get('pix_key', ''), 'pix_name': defaults.get('pix_name', '')}})
 
 
 @api_router.get("/")
@@ -274,6 +289,10 @@ async def reserve_product(product_id: str, data: ReserveInput):
         raise HTTPException(status_code=404, detail="Presente não encontrado")
     if product.get("reserved"):
         raise HTTPException(status_code=409, detail="Este presente já foi escolhido por outro convidado")
+    if product.get('tier') == 'pix':
+        settings = await db.settings.find_one({'key': 'party'})
+        if not settings or not settings.get('pix_key', '').strip() or not settings.get('pix_name', '').strip():
+            raise HTTPException(status_code=503, detail='O casal ainda precisa configurar os dados do Pix.')
     try:
         result = await db.products.update_one(
             {"id": product_id, "reserved": False},
