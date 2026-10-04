@@ -1,0 +1,190 @@
+{
+  "project_info": {
+    "title": "Chá de Casa Nova — Filipi & Larissa",
+    "theme": "Classic & Sophisticated Wedding Editorial Style (Estilo clássico e sofisticado para casamento)",
+    "language": "pt-BR",
+    "target_date": "2026-10-31",
+    "couple_names": "Filipi & Larissa",
+    "monogram": "F & L"
+  },
+  "typography": {
+    "fonts_to_import": [
+      "https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,600&family=Great+Vibes&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Cinzel:wght@400;600;700&display=swap"
+    ],
+    "heading_display": "'Cormorant Garamond', Georgia, serif",
+    "script_accent": "'Great Vibes', cursive",
+    "body_sans": "'Plus Jakarta Sans', system-ui, -apple-system, sans-serif",
+    "monogram_font": "'Cinzel', 'Cormorant Garamond', serif",
+    "rules": {
+      "h1_hero": "text-4xl sm:text-5xl lg:text-6xl font-serif tracking-tight leading-[1.15]",
+      "h2_section": "text-2xl sm:text-3xl lg:text-4xl font-serif tracking-tight leading-snug",
+      "h3_card": "text-xl sm:text-2xl font-serif font-medium",
+      "script_subtitle": "font-script text-2xl sm:text-3xl lg:text-4xl text-amber-800/80 -mt-2 mb-2 font-normal",
+      "overline_labels": "uppercase text-xs tracking-[0.25em] font-semibold text-amber-900/70",
+      "body_text": "text-base text-stone-700 leading-relaxed font-sans"
+    }
+  },
+  "colors": {
+    "archetype": "ORGANIC LUXURY & WEDDING CHAMPAGNE",
+    "palette": {
+      "bg_primary": "#FAF7F2",
+      "bg_secondary": "#F3EFE6",
+      "bg_card": "#FFFFFF",
+      "surface_warm": "#EFEAE1",
+      "text_primary": "#1A1816",
+      "text_muted": "#6E6862",
+      "accent_gold": "#C5A059",
+      "accent_gold_dark": "#9E7B36",
+      "accent_gold_light": "#E8D9B5",
+      "border_subtle": "#E4DDD3",
+      "border_accent": "#D4AF37",
+      "sage_subtle": "#E8ECE6",
+      "rose_subtle": "#F7EFEF"
+    },
+    "tailwind_theme_override": {
+      "background": "hsl(38, 33%, 97%)",
+      "foreground": "hsl(24, 8%, 10%)",
+      "card": "hsl(0, 0%, 100%)",
+      "primary": "hsl(39, 52%, 56%)",
+      "primary-foreground": "hsl(0, 0%, 100%)",
+      "secondary": "hsl(37, 24%, 93%)",
+      "muted": "hsl(33, 11%, 41%)",
+      "border": "hsl(36, 20%, 86%)"
+    }
+  },
+  "spacing_and_layout": {
+    "container_max_width": "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8",
+    "editorial_padding": "py-16 sm:py-24 lg:py-32",
+    "card_padding": "p-6 sm:p-8",
+    "grid_patterns": {
+      "product_carousel": "embla carousel slider with smooth drag + swipe controls",
+      "bento_story": "grid grid-cols-1 md:grid-cols-12 gap-8 items-center",
+      "details_grid": "grid grid-cols-1 md:grid-cols-3 gap-6"
+    }
+  },
+  "motion_and_effects": {
+    "scroll_behavior": "Lenis smooth scroll integration",
+    "entrance_animations": "framer-motion opacity 0->1, y 20->0 with stagger Children",
+    "glassmorphism": "backdrop-blur-md bg-white/80 border border-white/60 shadow-sm",
+    "micro_interactions": {
+      "button_hover": "hover:-translate-y-0.5 transition-all duration-300 shadow-md hover:shadow-lg",
+      "card_hover": "hover:-translate-y-1 hover:border-amber-700/30 transition-all duration-300"
+    }
+  },
+  "image_urls": {
+    "hero_banner": "https://images.unsplash.com/photo-1759774310887-1c62776ba950?crop=entropy&cs=srgb&fm=jpg&q=85&w=1600",
+    "hero_candle_table": "https://images.unsplash.com/photo-1668957067240-9483f721d207?crop=entropy&cs=srgb&fm=jpg&q=85&w=1200",
+    "couple_celebration": "https://images.unsplash.com/photo-1788617392927-205270c03d8b?crop=entropy&cs=srgb&fm=jpg&q=85&w=1200",
+    "table_flowers": "https://images.unsplash.com/photo-1778209816996-48451884f9c8?crop=entropy&cs=srgb&fm=jpg&q=85&w=1200",
+    "products": [
+      {
+        "id": "prod_1",
+        "title": "Jogo de Jantar Porcelana 20 Peças",
+        "category": "Mesa Posta",
+        "price_approx": "R$ 480,00",
+        "image": "https://images.unsplash.com/photo-1683048769158-6f109b096d0d?crop=entropy&cs=srgb&fm=jpg&q=85&w=800",
+        "store_ml": "https://www.mercadolivre.com.br",
+        "store_magalu": "https://www.magazineluiza.com.br",
+        "description": "Conjunto elegante de porcelana fina branca com acabamento acetinado para ocasiões especiais na nossa casa nova."
+      },
+      {
+        "id": "prod_2",
+        "title": "Cafeteira Espresso Italiana Smeg",
+        "category": "Eletrodomésticos",
+        "price_approx": "R$ 650,00",
+        "image": "https://images.unsplash.com/photo-1674504866626-fe4f19f68564?crop=entropy&cs=srgb&fm=jpg&q=85&w=800",
+        "store_ml": "https://www.mercadolivre.com.br",
+        "store_magalu": "https://www.magazineluiza.com.br",
+        "description": "Para preparar aquele café especial das manhãs de domingo no nosso novo lar."
+      },
+      {
+        "id": "prod_3",
+        "title": "Jogo de Panelas Cerâmica Premium",
+        "category": "Cozinha",
+        "price_approx": "R$ 520,00",
+        "image": "https://images.unsplash.com/photo-1696986324692-f4aa0f2f495d?crop=entropy&cs=srgb&fm=jpg&q=85&w=800",
+        "store_ml": "https://www.mercadolivre.com.br",
+        "store_magalu": "https://www.magazineluiza.com.br",
+        "description": "Conjunto com revestimento cerâmico antiaderente livre de PFOA para receitas deliciosas."
+      },
+      {
+        "id": "prod_4",
+        "title": "Jogo de Cama 600 Fios Algodão Egípcio",
+        "category": "Cama & Banho",
+        "price_approx": "R$ 390,00",
+        "image": "https://images.unsplash.com/photo-1615803795424-a477dc508acf?crop=entropy&cs=srgb&fm=jpg&q=85&w=800",
+        "store_ml": "https://www.mercadolivre.com.br",
+        "store_magalu": "https://www.magazineluiza.com.br",
+        "description": "Toque ultra suave de algodão egípcio para noites de descanso perfeitas na casa nova."
+      },
+      {
+        "id": "prod_5",
+        "title": "Fritadeira Elétrica Air Fryer Inox Digital",
+        "category": "Eletrodomésticos",
+        "price_approx": "R$ 420,00",
+        "image": "https://images.unsplash.com/photo-1690731848955-a074a072610d?crop=entropy&cs=srgb&fm=jpg&q=85&w=800",
+        "store_ml": "https://www.mercadolivre.com.br",
+        "store_magalu": "https://www.magazineluiza.com.br",
+        "description": "Praticidade e rapidez para preparar nossas refeições do dia a dia."
+      },
+      {
+        "id": "prod_6",
+        "title": "Jogo de Taças de Cristal Lapidado 6 Peças",
+        "category": "Mesa Posta",
+        "price_approx": "R$ 280,00",
+        "image": "https://images.unsplash.com/photo-1630396079679-46c1cfd2be2c?crop=entropy&cs=srgb&fm=jpg&q=85&w=800",
+        "store_ml": "https://www.mercadolivre.com.br",
+        "store_magalu": "https://www.magazineluiza.com.br",
+        "description": "Taças refinadas para brinde aos novos momentos e recepção aos amigos."
+      }
+    ]
+  },
+  "component_structure": {
+    "pages": {
+      "home": "/src/pages/Home.jsx",
+      "admin_login": "/src/pages/AdminLogin.jsx",
+      "admin_dashboard": "/src/pages/AdminDashboard.jsx"
+    },
+    "components": {
+      "navbar": "/src/components/Navbar.jsx",
+      "hero": "/src/components/Hero.jsx",
+      "couple_story": "/src/components/CoupleStory.jsx",
+      "product_carousel": "/src/components/ProductCarousel.jsx",
+      "product_detail_modal": "/src/components/ProductDetailModal.jsx",
+      "rsvp_section": "/src/components/RSVPSection.jsx",
+      "event_details": "/src/components/EventDetails.jsx",
+      "pix_contribution_modal": "/src/components/PixContributionModal.jsx",
+      "footer": "/src/components/Footer.jsx"
+    }
+  },
+  "test_id_conventions": {
+    "nav_rsvp_link": "nav-rsvp-link",
+    "nav_gifts_link": "nav-gifts-link",
+    "nav_admin_link": "nav-admin-link",
+    "product_card": "product-card-{id}",
+    "product_buy_ml": "product-buy-mercadolivre-{id}",
+    "product_buy_magalu": "product-buy-magalu-{id}",
+    "product_pix_btn": "product-pix-button-{id}",
+    "product_mark_purchased": "product-mark-purchased-toggle-{id}",
+    "rsvp_name_input": "rsvp-name-input",
+    "rsvp_attending_select": "rsvp-attending-select",
+    "rsvp_companions_input": "rsvp-companions-input",
+    "rsvp_message_input": "rsvp-message-textarea",
+    "rsvp_submit_btn": "rsvp-submit-button",
+    "admin_login_user": "admin-login-username-input",
+    "admin_login_pass": "admin-login-password-input",
+    "admin_login_submit": "admin-login-submit-button",
+    "admin_add_product_btn": "admin-add-product-button",
+    "admin_pix_key_input": "admin-pix-key-input",
+    "admin_save_settings_btn": "admin-save-settings-button"
+  },
+  "instructions_to_main_agent": [
+    "Use Brazilian Portuguese for all UI labels, headings, instructions and toasts.",
+    "Implement Lenis smooth scrolling for luxury editorial feel.",
+    "Add countdown timer component counting down to October 31, 2026.",
+    "Ensure Product Modal offers 3 clear actions: 'Comprar no Mercado Livre', 'Comprar na Magalu', and 'Presentear via PIX' (with copy key button and QR code aesthetic).",
+    "Allow guests to toggle 'Marcar como presenteado' with guest name input so the carousel items show reserved badge.",
+    "Admin section should allow Filipi & Larissa to manage gifts (add/edit/delete/toggle reserved), view RSVP list with companion count, and configure PIX key & party details.",
+    "All interactive elements MUST include data-testid as specified."
+  ]
+}
