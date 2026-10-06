@@ -14,6 +14,9 @@ import EventDetails from "@/Components/EventDetails";
 import RSVPSection from "@/Components/RSVPSection";
 import Footer from "@/Components/footer";
 
+// The file defines the visible catalog; the API supplies live reservation state.
+const featuredGiftIds = new Set(featuredGifts.map(product => product.id));
+
 export default function Home() {
   const [products, setProducts] = useState([]);
   const [settings, setSettings] = useState(null);
@@ -65,7 +68,7 @@ export default function Home() {
       <Navbar />
       <Hero />
       <CoupleStory />
-      <ProductCarousel products={online ? products.filter(p => p.tier !== "premium" && p.tier !== "pix") : featuredGifts} online={online} onChanged={load} />
+      <ProductCarousel products={online ? products.filter(p => featuredGiftIds.has(p.id) && p.tier !== "premium" && p.tier !== "pix") : featuredGifts} online={online} onChanged={load} />
       <ProductCarousel id="presentes-especiais" title="Presentes especiais" subtitle="Escolha e reserve seu presente. Combine os detalhes e a entrega com o casal." products={[...(online ? products.filter(p => p.tier === "premium") : premiumGifts.filter(p => !p.placeholder).map(p => ({ ...p, tier: "premium" }))), ...premiumGifts.filter(p => p.placeholder)]} online={online} onChanged={load} />
       <PixGifts products={online ? products.filter(p => p.tier === "pix") : pixGifts} online={online} settings={settings} onChanged={load} />
       <EventDetails settings={settings} />
