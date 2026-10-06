@@ -48,18 +48,7 @@ export const featuredGifts = [
     "external_only": true,
     "checked_at": "2026-10-02"
   },
-
-  {
-    "id": "escorredor",
-    "title": "Kit Escorredor de Massas + Arroz Inox Alta Qualidade Cozinha",
-    "category": "Cozinha",
-    "price": "R$ 35,90",
-    "price_note": "",
-    "image": "https://down-br.img.susercontent.com/file/sg-11134201-82270-mhthwrgxvdoi6e@resize_w450_nl.webp",
-    "link_ml": "https://shopee.com.br/product/1349986216/58251434210?d_id=fd8f8&uls_trackid=56plk85700k8&utm_content=47UhDdeiuiQY2qjbvMihuUE3wx4f",
-    "external_only": true,
-    "checked_at": "2026-10-02"
-  },  
+ 
 
   {
     "id": "escorredor-de-louca",
@@ -121,17 +110,6 @@ export const featuredGifts = [
     "checked_at": "2026-10-02"
   },
 
-  {
-    "id": "porta-frios",
-    "title": "Porta Frios Hermético Duplo com Tampa Queijeira Porta Queijo e Presunto - Clear Fresh",
-    "category": "Cozinha",
-    "price": "R$ 44,98",
-    "price_note": "",
-    "image": "https://down-br.img.susercontent.com/file/sg-11134201-825zt-mlp167257ymb57@resize_w450_nl.webp",
-    "link_ml": "https://shopee.com.br/product/1270189717/47107092279?d_id=fd8f8&uls_trackid=56plm9k500jl&utm_content=47UhDdeiug4Tq7TaYrXHQdhhoWjy",
-    "external_only": true,
-    "checked_at": "2026-10-02"
-  },
 
   {
     "id": "porta-acureiro",
@@ -157,54 +135,7 @@ export const featuredGifts = [
     "checked_at": "2026-10-02"
   },
 
-  {
-    "id": "kit-banheiro",
-    "title": "Kit Trio Usual Banheiro Preto",
-    "category": "Cozinha",
-    "price": "R$ 34,44",
-    "price_note": "",
-    "image": "https://http2.mlstatic.com/D_NQ_NP_2X_720343-MLA115849867640_092026-F.webp",
-    "link_ml": "https://www.mercadolivre.com.br/kit-trio-usual-banheiro-preto/p/MLB50665543?pdp_filters=item_id%3AMLB5686949746&matt_tool=38524122&ua=8SLU9mupLVoOFxKUERIcFFkErfb6pedynIByP_xGTxPpUeHq#origin=whatsapp&sid=whatsapp&wid=MLB5686949746",
-    "external_only": true,
-    "checked_at": "2026-10-02"
-  },
-
-    {
-    "id": "cesto-de-roupa",
-    "title": "Cesto Telado Rattan 50 Litros Com Tampa Premium",
-    "category": "Cozinha",
-    "price": "R$ 55,90  ",
-    "price_note": "",
-    "image": "https://down-br.img.susercontent.com/file/br-11134207-820lq-mqnfrwg8z3er33@resize_w450_nl.webp",
-    "link_ml": "https://shopee.com.br/product/1228456626/50256132220?d_id=fd8f8&uls_trackid=56podve300jq&utm_content=47UhDdeiwaR219jx7YNdrZJSSBuy",
-    "external_only": true,
-    "checked_at": "2026-10-02"
-  },
-
-  {
-    "id": "tapete-banheiro",
-    "title": "Kit Tapetes para Banheiro Soft Premium – 2 Peças Antiderrapante",
-    "category": "Cozinha",
-    "price": "R$ 28,90  ",
-    "price_note": "",
-    "image": "https://down-br.img.susercontent.com/file/br-11134207-820mh-mr16f4akmio475@resize_w450_nl.webp",
-    "link_ml": "https://shopee.com.br/product/1714444525/58214905159?d_id=fd8f8&uls_trackid=56poeb1800l7&utm_content=47UhDdeiwaam7jrM4XiRRbNNTkc7",
-    "external_only": true,
-    "checked_at": "2026-10-02"
-  },
-
-  {
-    "id": "tapete-banheiro-2",
-    "title": "Jogo De Tapete Para Banheiro 2 Peças Antiderrapante Macarrãzinho Bolinha Super Absorvente Macio",
-    "category": "Cozinha",
-    "price": "R$ 49,90  ",
-    "price_note": "",
-    "image": "https://down-br.img.susercontent.com/file/br-11134207-820m6-mlqhyjvpvy8441@resize_w450_nl.webp",
-    "link_ml": "https://shopee.com.br/product/561512296/18597835509?d_id=fd8f8&uls_trackid=56pog6co02l0&utm_content=47UhDdeiwakbAhLVf5j93mygMbjd",
-    "external_only": true,
-    "checked_at": "2026-10-02"
-  },
-
+  
   {
     "id": "lixeira-inox",
     "title": "Lixeira Inox 5 Litros Cesto Com Pedal E Balde Removível",
@@ -230,42 +161,6 @@ export const featuredGifts = [
   },
 
   {
-    "id": "kit-de-traveseiro",
-    "title": "Kit 2 Travesseiros Ortobom 200 Fios 50x70cm 100% Algodão Antialérgico Super Macio Perfil Alto",
-    "category": "Cozinha",
-    "price": "R$ 74,90  ",
-    "price_note": "",
-    "image": "https://down-br.img.susercontent.com/file/sg-11134201-23030-5jp0gsawqbovbc@resize_w450_nl.webp",
-    "link_ml": "https://shopee.com.br/product/311485828/8256303074?d_id=fd8f8&uls_trackid=56pogrkv00l1&utm_content=47UhDdeiwgTWVdmdvE1SHuy2TZiP",
-    "external_only": true,
-    "checked_at": "2026-10-02"
-  },
-
-  {
-    "id": "ferro-de-passar",
-    "title": "Ferro de Passar Roupa a Vapor e a Seco Electrolux Efficient com Vapor Vertical (ESI10)",
-    "category": "Cozinha",
-    "price": "R$ 94,91  ",
-    "price_note": "",
-    "image": "https://down-br.img.susercontent.com/file/sg-11134201-81zwv-mimr92ea3bpj18@resize_w450_nl.webp",
-    "link_ml": "https://shopee.com.br/product/1526836548/23094017910?d_id=fd8f8&uls_trackid=56poh2s103kv&utm_content=47UhDdeiwgcqfbeKrZYCPRwcmjnP",
-    "external_only": true,
-    "checked_at": "2026-10-02"
-  },
-
-  {
-    "id": "chaleira",
-    "title": "Chaleira Elétrica Jarra 1.8L Café Chá Inox 110v Vidro",
-    "category": "Cozinha",
-    "price": "R$ 69,99  ",
-    "price_note": "",
-    "image": "https://down-br.img.susercontent.com/file/br-11134207-820md-mrfw6xg5cq2tac@resize_w450_nl.webp",
-    "link_ml": "https://shopee.com.br/product/408653169/42601016789?d_id=fd8f8&uls_trackid=56pohal102jq&utm_content=47UhDdeiwgkhDsdxYnXgQE6suimd",
-    "external_only": true,
-    "checked_at": "2026-10-02"
-  },
-
-  {
     "id": "mixer-eletrico",
     "title": "Mixer Elétrico Triturador Liquidificador Chef MIX-20 3 em 1 200W Preto Elgin - 220V",
     "category": "Cozinha",
@@ -277,29 +172,6 @@ export const featuredGifts = [
     "checked_at": "2026-10-02"
   },
 
-  {
-    "id": "forninho",
-    "title": "Forno Elétrico Philco PFE65 - 65 Litros, 1800W, Preto",
-    "category": "Cozinha",
-    "price": "R$ 584,09  ",
-    "price_note": "",
-    "image": "https://down-br.img.susercontent.com/file/br-11134207-81ztc-mkbgtrbogrnk56@resize_w450_nl.webp",
-    "link_ml": "https://shopee.com.br/product/822103155/20398260120?d_id=fd8f8&uls_trackid=56poi8l401kv&utm_content=47UhDdeiwh7ufVgUZocHXC24zjCb",
-    "external_only": true,
-    "checked_at": "2026-10-02"
-  },
-
-  {
-    "id": "kit-churrasco",
-    "title": "Kit Churrasco Tramontina Jogo Trinchante Plenus com Lâminas em Aço Inox Preto 2 Peças",
-    "category": "Cozinha",
-    "price": "R$ 32,80  ",
-    "price_note": "",
-    "image": "https://down-br.img.susercontent.com/file/br-11134207-81ztc-mjkbv1mwb7r7aa@resize_w450_nl.webp",
-    "link_ml": "https://shopee.com.br/product/781943748/58253451835?d_id=fd8f8&uls_trackid=56poign901l0&utm_content=47UhDdeiwhG9pagcSWGe1q9fKtoy",
-    "external_only": true,
-    "checked_at": "2026-10-02"
-  },
 
   {
     "id": "batedeira",
@@ -308,39 +180,6 @@ export const featuredGifts = [
     "price_note": "",
     "image": "https://http2.mlstatic.com/D_NQ_NP_2X_712658-MLB115100592344_082026-F-batedeira-mondial-500w-bella-massa-b23-np.webp",
     "link_ml": "https://www.mercadolivre.com.br/batedeira-mondial-500w-bella-massa-b23-np/up/MLBU4847052819?pdp_filters=item_id%3AMLB5100436511&matt_tool=38524122&ua=NPTWQAVg2CioVUFy1UThJdfgdwTJtAI_HqZvt7L8hX14DyG3#origin=whatsapp&sid=whatsapp&wid=MLB5100436511",
-    "external_only": true,
-    "checked_at": "2026-10-02"
-  },
-
-  {
-    "id": "panela-pressao",
-    "title": "Panela de Pressão Tramontina 4,5L Vancouver Effect Preto 20591/420",
-    "price": "R$ 189,52  ",
-    "price_note": "",
-    "image": "https://http2.mlstatic.com/D_NQ_NP_2X_821832-MLA99571452148_122025-F.webp",
-    "link_ml": "https://www.mercadolivre.com.br/panela-de-pressao-tramontina-45l-vancouver-effect-preto-20591420/p/MLB10892513?pdp_filters=item_id%3AMLB6676479860&matt_tool=38524122&ua=4SXs5fwIK327WuY3096vr8LLbeUymPb1nmRFpjrAdipiWmWO#origin=whatsapp&sid=whatsapp&wid=MLB6676479860",
-    "external_only": true,
-    "checked_at": "2026-10-02"
-  },
-
-  {
-    "id": "potes-plastico",
-    "title": "21 Potes Plásticos Multiuso com Tampa para Mantimentos, Alimentos e Marmitas",
-    "price": "R$ 32,26  ",
-    "price_note": "",
-    "image": "https://down-br.img.susercontent.com/file/br-11134207-820lw-mtnwoivlaznlfc@resize_w450_nl.webp",
-    "link_ml": "https://shopee.com.br/product/449434162/58209861957?d_id=fd8f8&uls_trackid=56pojkl201jl&utm_content=47UhDdeiwkR67yG7MXWUWM5yJqcj",
-    "external_only": true,
-    "checked_at": "2026-10-02"
-  },
-
-  {
-    "id": "fruteira",
-    "title": "Fruteira de Mesa ou Cesto Multiuso Cesta de metal portátil Organizador para Casa Cozinha Escritório ES",
-    "price": "R$ 38,80  ",
-    "price_note": "",
-    "image": "https://down-br.img.susercontent.com/file/br-11134211-81zte-mko49067yfwi64@resize_w450_nl.webp",
-    "link_ml": "https://shopee.com.br/product/988030305/22997716018?d_id=fd8f8&uls_trackid=56pojt1600l0&utm_content=47UhDdeiwkcyPdRwSD4KXFSMFG2T",
     "external_only": true,
     "checked_at": "2026-10-02"
   },
@@ -368,17 +207,6 @@ export const featuredGifts = [
   },
 
   {
-    "id": "jarra-suco",
-    "title": "Jarra de Vidro Borossilicato 1,4L Tampa Inox Canelada Suco Chá Água Gelada Mesa Presente Cozinha",
-    "price": "R$ 29,90  ",
-    "price_note": "",
-    "image": "https://down-br.img.susercontent.com/file/sg-11134201-823p7-mozukjgasirle3@resize_w450_nl.webp",
-    "link_ml": "https://shopee.com.br/product/1078447452/58211847047?d_id=fd8f8&uls_trackid=56pokhm802ku&utm_content=47UhDdeiwmxbw7zurK7dHVjb8AFR",
-    "external_only": true,
-    "checked_at": "2026-10-02"
-  },
-
-  {
     "id": "conjunto-assadeira",
     "title": "Conjunto de Assadeiras Nadir Opaline em Vidro 3 Peças",
     "price": "R$ 59,90  ",
@@ -390,34 +218,12 @@ export const featuredGifts = [
   },
 
   {
-    "id": "tabuas",
-    "title": "Kit 3 Tábuas de Corte Antiderrapante Cozinha Churrasco Frutas Carnes Legumes Oferta Do Mês",
-    "price": "R$ 45,90  ",
-    "price_note": "",
-    "image": "https://down-br.img.susercontent.com/file/br-11134207-820m1-mtiv3uauh0qrba@resize_w450_nl.webp",
-    "link_ml": "https://shopee.com.br/product/1258176146/58202135295?d_id=fd8f8&uls_trackid=56pol8g000jp&utm_content=47UhDdeiwoJZhDcRhGU4gLuCmxzB",
-    "external_only": true,
-    "checked_at": "2026-10-02"
-  },
-
-  {
     "id": "jogo-panelas",
     "title": "Jogo Panelas Preto 5 Pç Tramontina Turim 20298/061",
     "price": "R$ 208,90  ",
     "price_note": "",
     "image": "https://http2.mlstatic.com/D_NQ_NP_2X_769549-MLA96416865462_102025-F.webp",
     "link_ml": "https://www.mercadolivre.com.br/jogo-panelas-preto-5-pc-tramontina-turim-20298061/p/MLB33321507?pdp_filters=item_id%3AMLB3659386543&matt_tool=38524122&ua=RemgkBwkwNmX-PsVkOnQClM65-F2sWW2_Rpystgrm3eHvdlO#origin=whatsapp&sid=whatsapp&wid=MLB3659386543",
-    "external_only": true,
-    "checked_at": "2026-10-02"
-  },
-
-  {
-    "id": "jogo-frigideiras",
-    "title": "Jogo de Frigideiras Tramontina Turim 2 Peças Chumbo - 20198/660",
-    "price": "R$ 59,81  ",
-    "price_note": "",
-    "image": "https://down-br.img.susercontent.com/file/sg-11134201-8262n-mlw0ml3lwe0y7f@resize_w450_nl.webp",
-    "link_ml": "https://shopee.com.br/product/1630032069/58256989835?d_id=fd8f8&uls_trackid=56polm1l02kf&utm_content=47UhDdeiwon8dST2JLnCeUbvfVwM",
     "external_only": true,
     "checked_at": "2026-10-02"
   },
