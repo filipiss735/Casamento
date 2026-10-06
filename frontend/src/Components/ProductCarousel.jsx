@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import useEmblaCarousel from "embla-carousel-react";
 import { ChevronLeft, ChevronRight, Gift } from "lucide-react";
 import GiftReservationModal from "./GiftReservationModal";
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
 
 export function storeLink(product) {
   if (product.tier === "premium" || product.tier === "pix") return "";
@@ -24,6 +25,8 @@ function merchant(product) {
 export default function ProductCarousel({ products, online, settings, onChanged, id = "presentes", title = "Escolha com carinho", subtitle = "Reserve seu presente antes de comprar. Preços e disponibilidade devem ser confirmados na loja." }) {
   const [emblaRef, emblaApi] = useEmblaCarousel({ align: "start" });
   const [selected, setSelected] = useState(null);
+  const [detailId, setDetailId] = useState(null);
+  const detail = products.find(p => p.id === detailId);
   const followedHash = useRef(null);
   const [highlighted, setHighlighted] = useState(null);
   useEffect(() => {
@@ -38,6 +41,7 @@ export default function ProductCarousel({ products, online, settings, onChanged,
       if (index < 0) return;
       followedHash.current = hash;
       setHighlighted(productId);
+      setDetailId(productId);
       emblaApi.scrollTo(index, true);
       const section = document.getElementById(id);
       if (window.__lenis) {
@@ -47,7 +51,7 @@ export default function ProductCarousel({ products, online, settings, onChanged,
         section?.scrollIntoView({ block: "start", behavior: "instant" });
       }
     };
-    const onHashChange = () => { followedHash.current = null; followLink(); };
+    const onHashChange = () => { followedHash.current = null; setDetailId(null); followLink(); };
     // Wait until the carousel has measured the current API/catalog slides.
     const frame = requestAnimationFrame(followLink);
     window.addEventListener("hashchange", onHashChange);
@@ -71,10 +75,12 @@ export default function ProductCarousel({ products, online, settings, onChanged,
           <div className="flex gap-6">
             {products.map((p) => (
               <article key={p.id} id={`presente-${p.id}`} data-testid={`product-card-${p.id}`} className={`shrink-0 basis-[86%] sm:basis-[46%] lg:basis-[31%] flex flex-col rounded-3xl overflow-hidden border border-[#E4DDD3] ${highlighted === p.id ? "ring-2 ring-inset ring-[#9E7B36]" : ""} ${p.reserved ? "bg-stone-200 grayscale opacity-70" : "bg-white"}`}>
-                {p.image ? <img src={p.image} alt={p.title} className="w-full aspect-[4/3] object-contain p-4" loading="lazy" /> : <div className="aspect-[4/3] flex items-center justify-center bg-stone-100 text-stone-400"><Gift size={64} aria-hidden="true" /></div>}
+                <button type="button" onClick={() => setDetailId(p.id)} aria-label={`Ver detalhes: ${p.title}`}>
+                  {p.image ? <img src={p.image} alt={p.title} className="w-full aspect-[4/3] object-contain p-4" loading="lazy" /> : <div className="aspect-[4/3] flex items-center justify-center bg-stone-100 text-stone-400"><Gift size={64} aria-hidden="true" /></div>}
+                </button>
                 <div className="p-6 flex flex-col flex-1">
                   <p className="text-xs uppercase tracking-widest text-[#9E7B36] mb-2">{p.placeholder ? "Exemplo para substituir" : merchant(p)}</p>
-                  <h3 className="font-serif text-2xl text-stone-900 leading-snug mb-3">{p.title}</h3>
+                  <h3 className="font-serif text-2xl text-stone-900 leading-snug mb-3"><button type="button" className="text-left" onClick={() => setDetailId(p.id)}>{p.title}</button></h3>
                   {p.tier === "pix" && <p className="text-sm text-stone-500 mb-2">{p.description}</p>}
                   {p.placeholder ? <p className="text-sm text-stone-500">Adicione a foto, o preço e o link do produto real para disponibilizar este presente.</p> : <>
                     {p.tier !== "premium" && <>
@@ -95,6 +101,22 @@ export default function ProductCarousel({ products, online, settings, onChanged,
           </div>
         </div>
       </div>
+      {detail && <Dialog open onOpenChange={open => { if (!open) setDetailId(null); }}>
+        <DialogContent data-lenis-prevent data-testid="gift-details-dialog" className="bg-[#FAF7F2] rounded-3xl max-h-[90vh] overflow-y-auto">
+          <DialogHeader>
+            <DialogTitle className="font-serif text-2xl pr-5">{detail.title}</DialogTitle>
+            <DialogDescription>{detail.reserved ? "Este presente já foi escolhido." : "Veja os detalhes e reserve seu presente para o casal."}</DialogDescription>
+          </DialogHeader>
+          {detail.image && <img src={detail.image} alt={detail.title} className="w-full h-56 object-contain rounded-xl bg-white p-3" />}
+          {detail.description && <p className="text-sm text-stone-600">{detail.description}</p>}
+          {detail.tier !== "premium" && detail.price && <p className="text-[#9E7B36] font-semibold text-xl">{detail.price}</p>}
+          {!online && <p role="status" className="text-sm text-stone-600">A disponibilidade precisa ser confirmada. <button type="button" onClick={onChanged} className="underline">Consultar novamente</button></p>}
+          {online && !detail.reserved && storeLink(detail) && <a href={storeLink(detail)} target="_blank" rel="noopener noreferrer" className="text-center underline text-sm">Ver produto na loja</a>}
+          <button type="button" disabled={!online || detail.reserved || detail.placeholder} onClick={() => { setSelected(detail); setDetailId(null); }} className="w-full py-3 rounded-full bg-[#9E7B36] text-white font-semibold disabled:bg-stone-400 disabled:cursor-not-allowed">
+            {detail.reserved ? "Indisponível — já escolhido" : detail.placeholder ? "Ainda indisponível" : "meu presente é esse"}
+          </button>
+        </DialogContent>
+      </Dialog>}
       {selected && <GiftReservationModal product={selected} online={online} settings={settings} onClose={() => setSelected(null)} onChanged={onChanged} />}
     </section>
   );
