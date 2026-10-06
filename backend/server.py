@@ -74,6 +74,11 @@ class Product(ProductInput):
     reserved_by: str = ""
     created_at: str = Field(default_factory=utcnow)
 
+    @field_validator('reserved_by', mode='before')
+    @classmethod
+    def normalize_reserved_by(cls, value):
+        return "" if value is None else value
+
 
 class PublicProduct(Product):
     reserved_by: str = Field(default="", exclude=True)
