@@ -55,7 +55,7 @@ export default function Hero() {
           className="mt-8 mb-6 mx-auto flex items-center justify-center gap-4"
         >
           <span className="h-px w-16 sm:w-24 bg-[#C5A059]/80" />
-          <span className="font-cinzel text-[#E8D9B5] tracking-[0.4em] text-sm sm:text-base">10 · 12 · 2026 · 16h30</span>
+          <span className="font-cinzel text-[#E8D9B5] tracking-[0.4em] text-sm sm:text-base">28 · 11 · 2026 · 16h30</span>
           <span className="h-px w-16 sm:w-24 bg-[#C5A059]/80" />
         </motion.div>
 
