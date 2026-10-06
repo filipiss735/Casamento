@@ -249,4 +249,53 @@ export const featuredGifts = [
     "external_only": true,
     "checked_at": "2026-10-02"
   },
+
+  {
+    "id": "Pipoqueira",
+    "title": "Pipoqueira Não Queima de Alumínio Polido 4,5L PROMOCAO",
+    "category": "Cozinha",
+    "price": "R$ 68,50",
+    "price_note": "",
+    "image": "https://down-br.img.susercontent.com/file/br-11134207-7r98o-m01r5y0huulj0c@resize_w450_nl.webp",
+    "link_ml": "https://shopee.com.br/product/379103154/18899381254?d_id=fd8f8&uls_trackid=56qfcthh00kf&utm_content=47UhDdeiwtVwV5dAR8LUSECTPEa3",
+    "external_only": true,
+    "checked_at": "2026-10-02"
+  },
+
+  {
+    "id": "Varal",
+    "title": "Varal De Chão De Roupas 3 Andares Dobrável Grande 4 Rodas",
+    "category": "Lavanderia",
+    "price": "R$ 69,55",
+    "price_note": "",
+    "image": "https://down-br.img.susercontent.com/file/br-11134207-81ztc-mjsta6uqyigy2c@resize_w450_nl.webp",
+    "link_ml": "https://shopee.com.br/product/1243683750/19099664173?d_id=fd8f8&uls_trackid=56qfdi0303kf&utm_content=47UhDdeiwt36NGqcRNzLaDcCE151",
+    "external_only": true,
+    "checked_at": "2026-10-02"
+  },
+
+  {
+    "id": "panela-de-pressao",
+    "title": "Panela de Pressão Elétrica Philco 4L 14 funções PPPE04A",
+    "category": "Cozinha",
+    "price": "R$ 342,86",
+    "price_note": "",
+    "image": "https://down-br.img.susercontent.com/file/sg-11134201-825b2-mts8rk1tv2md01@resize_w450_nl.webp",
+    "link_ml": "https://shopee.com.br/product/811034337/23294299174?d_id=fd8f8&uls_trackid=56qfds1n01jl&utm_content=47UhDdeiwgqqHwuuq46bxauQvFzf",
+    "external_only": true,
+    "checked_at": "2026-10-02"
+  },
+
+  {
+    "id": "queijeira",
+    "title": "Queijeira Wolff Imperatriz De Cristal Fio De Ouro 20cm",
+    "category": "Mesa Posta",
+    "price": "R$ 71,48",
+    "price_note": "",
+    "image": "https://down-br.img.susercontent.com/file/sg-11134201-821ds-mgzp1u3z9r0v29@resize_w450_nl.webp",
+    "link_ml": "https://shopee.com.br/product/1263373011/23794673897?d_id=fd8f8&uls_trackid=56qfeabk02jp&utm_content=47UhDdeiufV5f25MC6vXchPin8Ab",
+    "external_only": true,
+    "checked_at": "2026-10-02"
+  },
+
 ];
