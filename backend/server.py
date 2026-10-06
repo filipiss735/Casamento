@@ -229,7 +229,7 @@ async def seed_database():
             "pix_key": "",
             "pix_name": "Filipi & Larissa",
             "party_time": "16h30",
-            "party_address": "Av. Frei Cirilo, 4340 — Igreja de Jesus Cristo dos Santos dos Últimos Dias",
+            "party_address": "Igreja de Jesus Cristo dos Santos dos Últimos Dias — R. Valparaíso, R. E Conjunto Palmeiras, 830, Fortaleza - CE, 60870-440",
         })
     pix_config = ROOT_DIR.parent / 'frontend/src/data/pixSettings.json'
     if pix_config.exists():

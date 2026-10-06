@@ -4,7 +4,7 @@ export default function EventDetails({ settings }) {
   const details = [
     { icon: CalendarDays, title: "Data", value: "28 de novembro de 2026" },
     { icon: Clock, title: "Horário", value: "16h30" },
-    { icon: MapPin, title: "Local", value: settings?.party_address?.trim() && settings.party_address !== "Endereço a confirmar em breve" ? settings.party_address : "Av. Frei Cirilo, 4340 — Igreja de Jesus Cristo dos Santos dos Últimos Dias" },
+    { icon: MapPin, title: "Local", value: settings?.party_address?.trim() && !["Endereço a confirmar em breve", "Av. Frei Cirilo, 4340 — Igreja de Jesus Cristo dos Santos dos Últimos Dias"].includes(settings.party_address.trim()) ? settings.party_address : "Igreja de Jesus Cristo dos Santos dos Últimos Dias — R. Valparaíso, R. E Conjunto Palmeiras, 830, Fortaleza - CE, 60870-440" },
   ];
 
   return (
