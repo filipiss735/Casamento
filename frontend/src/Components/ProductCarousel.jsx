@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import useEmblaCarousel from "embla-carousel-react";
 import { ChevronLeft, ChevronRight, Gift } from "lucide-react";
 import GiftReservationModal from "./GiftReservationModal";
@@ -24,6 +24,38 @@ function merchant(product) {
 export default function ProductCarousel({ products, online, settings, onChanged, id = "presentes", title = "Escolha com carinho", subtitle = "Reserve seu presente antes de comprar. Preços e disponibilidade devem ser confirmados na loja." }) {
   const [emblaRef, emblaApi] = useEmblaCarousel({ align: "start" });
   const [selected, setSelected] = useState(null);
+  const followedHash = useRef(null);
+  const [highlighted, setHighlighted] = useState(null);
+  useEffect(() => {
+    if (!emblaApi) return;
+    const followLink = () => {
+      const hash = window.location.hash;
+      if (!hash.startsWith("#presente-") || followedHash.current === hash) return;
+      let productId;
+      try { productId = decodeURIComponent(hash.slice("#presente-".length)); }
+      catch { return; }
+      const index = products.findIndex(p => p.id === productId);
+      if (index < 0) return;
+      followedHash.current = hash;
+      setHighlighted(productId);
+      emblaApi.scrollTo(index, true);
+      const section = document.getElementById(id);
+      if (window.__lenis) {
+        window.__lenis.resize();
+        window.__lenis.scrollTo(section, { offset: -72, immediate: true, force: true });
+      } else {
+        section?.scrollIntoView({ block: "start", behavior: "instant" });
+      }
+    };
+    const onHashChange = () => { followedHash.current = null; followLink(); };
+    // Wait until the carousel has measured the current API/catalog slides.
+    const frame = requestAnimationFrame(followLink);
+    window.addEventListener("hashchange", onHashChange);
+    return () => {
+      cancelAnimationFrame(frame);
+      window.removeEventListener("hashchange", onHashChange);
+    };
+  }, [emblaApi, products, id]);
   return (
     <section id={id} className="py-16 sm:py-20 bg-[#F3EFE6]" data-testid={`${id}-section`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -38,7 +70,7 @@ export default function ProductCarousel({ products, online, settings, onChanged,
         <div className="overflow-hidden" ref={emblaRef}>
           <div className="flex gap-6">
             {products.map((p) => (
-              <article key={p.id} data-testid={`product-card-${p.id}`} className={`shrink-0 basis-[86%] sm:basis-[46%] lg:basis-[31%] flex flex-col rounded-3xl overflow-hidden border border-[#E4DDD3] ${p.reserved ? "bg-stone-200 grayscale opacity-70" : "bg-white"}`}>
+              <article key={p.id} id={`presente-${p.id}`} data-testid={`product-card-${p.id}`} className={`shrink-0 basis-[86%] sm:basis-[46%] lg:basis-[31%] flex flex-col rounded-3xl overflow-hidden border border-[#E4DDD3] ${highlighted === p.id ? "ring-2 ring-inset ring-[#9E7B36]" : ""} ${p.reserved ? "bg-stone-200 grayscale opacity-70" : "bg-white"}`}>
                 {p.image ? <img src={p.image} alt={p.title} className="w-full aspect-[4/3] object-contain p-4" loading="lazy" /> : <div className="aspect-[4/3] flex items-center justify-center bg-stone-100 text-stone-400"><Gift size={64} aria-hidden="true" /></div>}
                 <div className="p-6 flex flex-col flex-1">
                   <p className="text-xs uppercase tracking-widest text-[#9E7B36] mb-2">{p.placeholder ? "Exemplo para substituir" : merchant(p)}</p>
