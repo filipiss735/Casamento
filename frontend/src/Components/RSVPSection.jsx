@@ -49,7 +49,7 @@ export default function RSVPSection() {
         >
           <p className="font-script text-3xl sm:text-4xl text-[#9E7B36] mb-2">Confirmação de presença</p>
           <h2 className="font-serif text-3xl sm:text-4xl text-stone-900 tracking-tight">Você vem brindar com a gente?</h2>
-          <p className="text-stone-500 mt-3 text-sm sm:text-base">Confirme até 1º de dezembro de 2026 para prepararmos tudo com carinho.</p>
+          <p className="text-stone-500 mt-3 text-sm sm:text-base">Confirme até 21 de novembro de 2026 para prepararmos tudo com carinho.</p>
         </motion.div>
 
         <motion.div

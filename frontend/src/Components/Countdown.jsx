@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 
 // Horário da festa no fuso de Fortaleza (UTC-3).
-const EVENT_DATE = new Date("2026-12-10T16:30:00-03:00").getTime();
+const EVENT_DATE = new Date("2026-11-28T16:30:00-03:00").getTime();
 
 export default function Countdown({ dark = false }) {
   const [remaining, setRemaining] = useState(() => Math.max(0, EVENT_DATE - Date.now()));
@@ -24,7 +24,7 @@ export default function Countdown({ dark = false }) {
       {remaining === 0 ? (
         <p className="font-script text-3xl">Chegou o grande dia!</p>
       ) : (
-        <div className="flex justify-center gap-4 sm:gap-8" role="timer" aria-label="Contagem regressiva para 10 de dezembro de 2026 às 16h30">
+        <div className="flex justify-center gap-4 sm:gap-8" role="timer" aria-label="Contagem regressiva para 28 de novembro de 2026 às 16h30">
           {units.map(([label, value]) => (
             <div key={label} className="text-center min-w-12">
               <span className="block font-serif text-3xl sm:text-4xl tabular-nums">{String(value).padStart(2, "0")}</span>

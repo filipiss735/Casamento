@@ -18,8 +18,7 @@ export default function PixGifts({ products, online, settings, onChanged }) {
           const exhausted = online && available.length === 0;
           return <article key={amount} data-testid={`pix-group-${amount}`} className={`rounded-3xl border border-[#E4DDD3] p-8 text-center ${exhausted ? "bg-stone-200 grayscale" : "bg-white"}`}>
             <Gift size={32} className="mx-auto text-[#9E7B36]" aria-hidden="true" />
-            <h3 className="font-serif text-4xl mt-5">R$ {amount},00</h3>
-            <p className="text-sm text-stone-600 my-4" aria-live="polite">{online ? `${available.length} de 10 cotas disponíveis` : "10 cotas no total — aguardando consulta"}</p>
+            <h3 className="font-serif text-4xl mt-5 mb-6">R$ {amount},00</h3>
             <button disabled={exhausted || !target} onClick={() => setSelected(target)} className="w-full rounded-full bg-[#9E7B36] text-white py-3 px-3 disabled:bg-stone-400 disabled:cursor-not-allowed">{exhausted ? "Todas as cotas reservadas" : `Presentear R$ ${amount}`}</button>
           </article>;
         })}
