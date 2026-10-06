@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
 import { api, apiError } from "@/lib/api";
 import { storeLink } from "./ProductCarousel";
+import { giftContacts, giftWhatsAppLink } from "@/lib/giftWhatsApp";
 
 export default function GiftReservationModal({ product, online, settings, onClose, onChanged }) {
   const [form, setForm] = useState({ guest_name: "", phone: "", message: "" });
@@ -47,6 +48,15 @@ export default function GiftReservationModal({ product, online, settings, onClos
           {error && <p role="alert" className="text-red-700 text-sm">{error}</p>}
         </div>}
         {storeLink(product) && <a className="block text-center py-3 rounded-full bg-[#9E7B36] text-white" href={storeLink(product)} target="_blank" rel="noopener noreferrer">Comprar na loja</a>}
+        <div className="border-t border-[#E4DDD3] pt-4 space-y-3">
+          <p className="font-semibold">Avise o casal pelo WhatsApp</p>
+          <p className="text-sm text-stone-600">Sua reserva já está salva. Para avisar os dois, abra cada conversa e toque em Enviar no WhatsApp.{!isPix && " A mensagem inclui o link da foto, não uma imagem anexada."}</p>
+          {giftContacts.map(contact => (
+            <a key={contact.phone} href={giftWhatsAppLink(contact, product, form, window.location.origin)} target="_blank" rel="noopener noreferrer" className="block text-center rounded-full bg-green-800 hover:bg-green-900 text-white py-3 px-4">
+              Avisar {contact.name} no WhatsApp
+            </a>
+          ))}
+        </div>
         <button className="w-full py-2 underline" onClick={onClose}>Concluir</button>
       </div> : <form onSubmit={submit} className="space-y-4">
         {!online && <p role="alert" className="text-amber-900 bg-amber-50 p-3 rounded-xl">Não há conexão com o servidor de reservas. Sua escolha só será confirmada após a conexão ser restabelecida. <button type="button" onClick={onChanged} className="underline font-semibold">Tentar conectar</button></p>}
