@@ -298,16 +298,4 @@ export const featuredGifts = [
     "checked_at": "2026-10-02"
   },
 
-  {
-    "id": "Playstation",
-    "title": "PlayStation 5 Pro",
-    "category": "Mesa Posta",
-    "price": "R$ 7.552,50 ",
-    "price_note": "",
-    "image": "https://m.media-amazon.com/images/I/51fRDc+9ajL._AC_SX679_.jpg",
-    "link_ml": "https://www.amazon.com.br/PlayStation-2faa94f2-f2aa-486a-83d6-8cc8625df8ed-5-Pro/dp/B0DJH2NS6R?source=ps-sl-shoppingads-lpcontext&ref_=fplfs&psc=1&smid=A3391ZCWNCQKXA",
-    "external_only": true,
-    "checked_at": "2026-10-02"
-  },
-
 ];
